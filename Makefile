@@ -3,15 +3,15 @@ CFLAGS := -O2
 
 .PHONY: all clean
 
-all: bin bin/main bin/sink
+all: bin/main bin/sink
 
 bin:
 	mkdir -p bin
 
-bin/main: main.c
+bin/main: bin main.c
 	$(CC) $(CFLAGS) main.c -o bin/main
 
-bin/sink: sink.c
+bin/sink: bin sink.c
 	$(CC) $(CFLAGS) sink.c -o bin/sink
 
 TOTAL_DATA_GB = 16
